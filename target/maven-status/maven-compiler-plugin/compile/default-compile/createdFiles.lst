@@ -1,0 +1,5 @@
+com/almosafer/merge_app/MergeAppApplication.class
+com/almosafer/merge_app/service/BookService.class
+com/example/bookmanager/controller/BookController.class
+com/almosafer/merge_app/repository/BookRepository.class
+com/almosafer/merge_app/model/Book.class
