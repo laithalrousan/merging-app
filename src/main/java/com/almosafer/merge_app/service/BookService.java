@@ -27,9 +27,17 @@ public class BookService {
 
     public Book updateBook(Long id, Book bookDetails) {
         Book book = bookRepository.findById(id).orElseThrow(() -> new RuntimeException("Book not found"));
-        book.setTitle(bookDetails.getTitle());
-        book.setAuthor(bookDetails.getAuthor());
-        book.setYear(bookDetails.getYear());
+        if(bookDetails.getTitle() != null) {
+            book.setTitle(bookDetails.getTitle());
+        }
+        if(bookDetails.getAuthor() != null) {
+            book.setAuthor(bookDetails.getAuthor());
+        }
+        if (bookDetails.getYear()<=2022){
+            book.setYear(2022);
+        } else {
+            book.setYear(bookDetails.getYear());
+        }
         return book;
     }
 
